@@ -2,7 +2,7 @@
 
 import unittest
 
-from calc import add, multiply
+from calc import add, multiply, subtract
 
 
 class TestCalc(unittest.TestCase):
@@ -14,7 +14,9 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(multiply(3, 4), 12)
         self.assertEqual(multiply(0, 99), 0)
 
-    # Hinweis: Für subtract() fehlt noch ein Test – das holen wir im ersten PR nach.
+    def test_subtract(self):
+        self.assertEqual(subtract(10, 6), 4)
+        self.assertEqual(subtract(0, 5), -5)
 
 
 if __name__ == "__main__":
